@@ -20,12 +20,12 @@ public class CarritoService {
         this.itemCarrito = new ArrayList<>();
     }
 
-    public void addItemCart(Integer idPrC,
+    public void addItemCart(Integer idPr,
             String nombrePr,
             Integer quantity,
             BigDecimal precio) {
 
-        ItemCarrito itemCarrit = new ItemCarrito(idPrC,
+        ItemCarrito itemCarrit = new ItemCarrito(idPr,
                 nombrePr, quantity, precio);
         itemHashMap.put(itemCarrit.getIdPrC(), itemCarrit);
         fillList();
