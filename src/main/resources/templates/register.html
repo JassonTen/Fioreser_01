@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form th:action="@{/register}" method="post" th:object="${usuarioDto}">
+        <div class="form-group">
+          <label for="nombres">Nombre:</label> <input type="text"
+            class="form-control" id="nombres" name="nombres"
+            placeholder="Ingrese su nombre" autocomplete="off">
+        </div>
+  
+        <div class="form-group">
+          <label for="correo">Correo:</label> <input type="email" class="form-control" id="correo" name="correo"
+                                                        placeholder="Ingrese su correo" autocomplete="off">
+        </div>
+  
+        <div class="form-group">
+            <label for="contraseña">Contraseña</label> <input type="password"
+              class="form-control" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" autocomplete="off">
+          </div>
+
+
+          <div class="form-group">
+            <label for="celular">Teléfono:</label> <input type="text"
+              class="form-control" id="celular" name="celular"
+              placeholder="Ingrese su teléfono" autocomplete="off">
+          </div>
+
+        <div class="form-group">
+          <label for="direccions">Dirección:</label> <input type="text"
+            class="form-control" id="direccion" name="direccion"
+            placeholder="Ingrese su dirección" autocomplete="off">
+        </div>
+         
+  
+        
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+/* Estructura básica */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    /* Activa el scroll vertical */
+
+}
+
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+
+button {
+    padding: 10px 15px;
+    background-color: #2b552d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    /* Centrado horizontalmente */
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #173319;
+    align-items: center;
+}
+

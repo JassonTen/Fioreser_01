@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:insert ="~{admin/template_admin::head_menu}"></head>
+    <body>
+        
+        <!-- Contenedor principal que incluye el menú y el contenido -->
+    <div class="container">
+        <!-- Navegación menú -->
+        <div class="navigation">
+            <ul>
+                <div class="logo-name">
+                    <div class="logo-image">
+                        <img src="imgAdm/logo001.png" alt="">
+                    </div>
+                </div>
+
+                <li>
+                    <a href="inicio.html" class="nav-link">
+                        <span class="icon">
+                            <ion-icon name="home"></ion-icon>
+                        </span>
+                        <span class="title">Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gestion.html" class="nav-link">
+                        <span class="icon">
+                            <ion-icon name="reader"></ion-icon>
+                        </span>
+                        <span class="title">Gestionar</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="category.html" class="nav-link">
+                        <span class="icon">
+                            <ion-icon name="pricetags"></ion-icon>
+                        </span>
+                        <span class="title">Categorías</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pedido.html" class="nav-link">
+                        <span class="icon">
+                            <ion-icon name="cellular"></ion-icon>
+                        </span>
+                        <span class="title">Pedidos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a th:href="@{/logout}" class="nav-link">
+                        <span class="icon">
+                            <ion-icon name="log-out-sharp"></ion-icon>
+                        </span>
+                        <span class="title">Salir</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contenedor principal donde se mostrará el contenido -->
+        <div id="main-content" class="main-content-wrapper">
+            <div class="hero">
+                <div class="overlay">
+                    <h1 class="titleP">Te damos la Bienvenida</h1>
+                    <p class="subtitleP">Explora las opciones de menú</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear producto -->
+    <div id="miModal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal1()">&times;</span>
+        </div>
+    </div>
+
+    <!-- Modal para editar producto -->
+    <div id="miModal2" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal2()">&times;</span>
+        </div>
+    </div>
+
+    <!-- Modal para crear pedido -->
+    <div id="miModal3" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal3()">&times;</span>
+        </div>
+    </div>
+        
+    </body>
+    
+    <script th:insert="~{admin/template_admin::script_menu}"></script>
+    
+</html>

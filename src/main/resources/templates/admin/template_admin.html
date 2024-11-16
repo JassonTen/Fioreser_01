@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment ="head_menu">
+        <title>FIORESER ADMIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/admin/styleM.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/img/admin/logoico.ico}" rel="icon" type="image/x-icon"/>
+        <script th:src="@{/js/admin/menu.js}" type="text/javascript"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <style>
+            /* Estilos encapsulados para la vista principal */
+            .main-content-wrapper .hero {
+                background-image: url('../..//static/img/admin/fondo02.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 95vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                color: white;
+            }
+
+            .main-content-wrapper .overlay {
+                background-color: rgba(36, 36, 35, 0.234);
+                padding: 20px;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .main-content-wrapper {
+                max-width: 100%;
+                padding: 20px;
+                /* Añadir algo de espacio alrededor */
+                overflow: hidden;
+                /* Evita el desbordamiento */
+            }
+
+            .main-content-wrapper .titleP {
+                font-size: 3.6rem;
+                margin-bottom: 10px;
+                line-height: 1.2;
+                word-wrap: break-word;
+                /* Asegura que el texto se ajuste si es demasiado largo */
+            }
+
+            .main-content-wrapper .subtitleP {
+                font-size: 1.5rem;
+                word-wrap: break-word;
+                /* Asegura que el texto se ajuste si es demasiado largo */
+            }
+
+            /* Media Query para pantallas pequeñas */
+            @media (max-width: 608px) {
+                #main-content {
+                    width: 100%;
+                    margin-left: 0;
+                    padding: 10px;
+                    /* Asegura que haya espacio para los textos */
+                }
+
+                .main-content-wrapper .titleP {
+                    font-size: 1.5rem;
+                    /* Ajusta el tamaño del texto para pantallas pequeñas */
+                    white-space: normal;
+                    /* Permite que el texto se ajuste automáticamente */
+                }
+
+                .main-content-wrapper .subtitleP {
+                    font-size: 0.9rem;
+                    white-space: normal;
+                    /* Asegura que el texto se ajuste */
+                }
+            }
+        </style>
+    </head>
+
+    <script th:fragment ="script_menu">
+        function abrirModal() {
+            document.getElementById("miModal").style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("miModal").style.display = "none";
+        }
+
+
+        //Modal para editar
+        function abrirModal2() {
+            document.getElementById("miModal2").style.display = "block";
+        }
+
+        function cerrarModal2() {
+            document.getElementById("miModal2").style.display = "none";
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera de él
+        window.onclick = function (event) {
+            const modal = document.getElementById("miModal2");
+            if (event.target === modal) {
+                cerrarModal2();
+            }
+        }
+
+        //Modal para Crear Pedido
+        function abrirModal3() {
+            document.getElementById("miModal3").style.display = "block";
+        }
+
+        function cerrarModal3() {
+            document.getElementById("miModal3").style.display = "none";
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera de él
+        window.onclick = function (event) {
+            const modal = document.getElementById("miModal3");
+            if (event.target === modal) {
+                cerrarModal3();
+            }
+        }
+
+        function previewImage() {
+            const fileInput = document.getElementById("image");
+            const previewImg = document.getElementById("preview-img");
+
+            // Verifica que haya un archivo seleccionado
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                // Carga la imagen seleccionada
+                reader.onload = function (e) {
+                    previewImg.src = e.target.result;
+                    previewImg.style.display = "block"; // Muestra la imagen de previsualización
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                previewImg.src = "";
+                previewImg.style.display = "none"; // Oculta la imagen si no hay selección
+            }
+        }
+
+    </script>
+</html>
