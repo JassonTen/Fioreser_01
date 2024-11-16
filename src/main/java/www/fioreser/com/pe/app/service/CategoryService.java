@@ -9,24 +9,24 @@ import www.fioreser.com.pe.infrastructure.entity.CategoryEntity;
  */
 public class CategoryService {
     
-    private final CategoryRepository categoryRepositor;
+    private final CategoryRepository categoryRepository;
     
     public CategoryService(CategoryRepository categoryRepository){
-        this.categoryRepositor = categoryRepository;
+        this.categoryRepository = categoryRepository;
     }
     
     public Iterable<CategoryEntity>  getCategory(){
-        return categoryRepositor.getCategory();
+        return categoryRepository.getCategory();
     }
    
     public CategoryEntity getCategoryById(Integer idCa){
-        return categoryRepositor.getCategoryById(idCa);
+        return categoryRepository.getCategoryById(idCa);
     }
     public CategoryEntity guardarCategory(CategoryEntity categoryEntity){
-        return categoryRepositor.guardarCategory(categoryEntity);
+        return categoryRepository.guardarCategory(categoryEntity);
     }
     public boolean deleteCategoryById(Integer idCa){
-        return categoryRepositor.deleteCategoryById(idCa);
+        return categoryRepository.deleteCategoryById(idCa);
     }
     
 }
